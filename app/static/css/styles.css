@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Quicksand:wght@300..700&family=Signika:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Quicksand:wght@300..700&family=Signika:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Quicksand:wght@300..700&family=Signika:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300..700&display=swap');
+
+/*General Styling*/
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F7E4D4;
+    overflow: hidden;
+}
+
+
+/*Corner Graphics*/
+.corner {
+    position: absolute;
+    width: 12vw;
+    height: 12vw;
+    opacity: 0;
+    transform: scale(0);
+}
+
+.corner img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Specific Corner Positions with Animations */
+.corner-top-left {
+    top: 0px;
+    left: 0px;
+    animation: animateIn 1s 0.5s forwards;
+}
+
+.corner-top-right {
+    top: 0px;
+    right: 0px;
+    animation: animateIn 1s 0.5s forwards;
+}
+
+.corner-bottom-left {
+    bottom: 0px;
+    left: 0px;
+    animation: animateIn 1s 0.5s forwards;
+}
+
+.corner-bottom-right {
+    bottom: 0px;
+    right: 0px;
+    animation: animateIn 1s 0.5s forwards;
+}
+
+/* Center Content */
+.center-content {
+    text-align: center;
+    z-index: 10;
+}
+
+.title {
+    font-size: 8rem;
+    color: #2D2D2A;
+    margin: 10px 0;
+    font-family: 'Comfortaa';
+    font-weight: 700px;
+    animation: slideInDown 1s 1s forwards;
+    opacity: 0;
+    letter-spacing: 0.08em;
+}
+
+.subtitle {
+    font-size: 2rem;
+    color: #a1a199;
+    margin: 15px 0;
+    font-family: 'Quicksand';
+    font-weight: 400px;
+    animation: slideInUp 1s 1.5s forwards;
+    opacity: 0;
+    letter-spacing: 0.05em;
+}
+
+.start-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #8CC2A5;
+    color: #2D2D2A;
+    font-family: 'Nunito';
+    font-weight: 600px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 2.5rem;
+    animation: fadeIn 1s 1.75s forwards;
+    opacity: 0;
+    letter-spacing: 0.1em;
+}
+
+/* Animations */
+@keyframes animateIn {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
