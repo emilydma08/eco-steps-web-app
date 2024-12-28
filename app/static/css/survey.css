@@ -1,0 +1,124 @@
+/* General Styles for the Page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.survey-container {
+    max-width: 800px;
+    margin: 30px auto;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Styling the Form */
+#survey-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+.question p {
+    font-size: 16px;
+    margin: 10px 0;
+    color: #555;
+}
+
+label {
+    font-size: 14px;
+    margin-right: 10px;
+    color: #444;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="range"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+input[type="text"]:focus,
+input[type="range"]:focus {
+    outline: none;
+    border-color: #66b3ff;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Styling the Button */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .survey-container {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    button {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .question {
+        margin-bottom: 15px;
+    }
+
+    label {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .survey-container {
+        padding: 10px;
+        margin: 5px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 12px 15px;
+    }
+}
