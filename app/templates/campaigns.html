@@ -4,8 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Select Campaign</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/campaigns.css') }}">
 </head>
-<body>
+<body>    
+    <div class="campaign-container">
+        {% if recommended_campaign %}
+            <div class="campaign-name">{{ recommended_campaign }}</div>
+            <div class="icon-container">
+                <img src="{{ campaign_icon }}" alt="Campaign Icon" class="campaign-icon">
+            </div>            <div class="campaign-description">{{ campaign_description }}</div>
+            <div class="campaign-length">Length: {{ campaign_length }}</div>
+            <a href="{{ url_for('dashboard') }}" class="next-button">Next</a>
+        {% else %}
+            <p>No campaign recommendation available at the moment.</p>
+        {% endif %}
+    </div>
+
 
 </body>
 </html>

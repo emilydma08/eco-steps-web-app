@@ -9,29 +9,22 @@
 <body>
     <div class="survey-container">
         <h1>Tell Us About Yourself</h1>
-        <form id="survey-form">
-            <div class="question">
-                <label for="first-name">What's your first name?</label>
-                <input type="text" id="first-name" name="first-name" placeholder="Enter your first name" required>
-              </div>
-
-            <div class="question">
-                <p>What is your age range?</p>
-                <label><input type="radio" name="age-range" value="Under 18"> Under 18</label><br>
-                <label><input type="radio" name="age-range" value="18-24"> 18-24</label><br>
-                <label><input type="radio" name="age-range" value="25-39"> 25-40</label><br>
-                <label><input type="radio" name="age-range" value="40-55"> 40-55</label><br>
-                <label><input type="radio" name="age-range" value="55+"> 55+</label><br>
-            </div>
-
+        <form id="survey-form" onsubmit="console.log('Form submitted', new FormData(this));">
             <div class="question">
                 <p>How would you describe your current lifestyle regarding sustainability? 1: Beginner, 5: Expert</p>
-                <input type="range" name="lifestyle-rating" min="1" max="5" step="1">
+                <input id='rating-slider' type="range" name="lifestyle-rating" min="1" max="5" step="1" required>
+                <div class="slider-labels">
+                    <span>1</span>
+                    <span>2</span>
+                    <span>3</span>
+                    <span>4</span>
+                    <span>5</span>
+                </div>
             </div>
 
             <div class="question">
                 <p>How often do you sort your waste into recycling, compost, and trash?</p>
-                <label><input type="radio" name="waste-sorting" value="Never"> Never</label><br>
+                <label><input type="radio" name="waste-sorting" value="Never" required> Never</label><br>
                 <label><input type="radio" name="waste-sorting" value="Rarely"> Rarely</label><br>
                 <label><input type="radio" name="waste-sorting" value="Sometimes"> Sometimes</label><br>
                 <label><input type="radio" name="waste-sorting" value="Often"> Often</label><br>
@@ -40,7 +33,7 @@
 
             <div class="question">
                 <p>How often do you avoid single-use plastics, like straws, plastic bags, or water bottles?</p>
-                <label><input type="radio" name="avoid-plastics" value="Never"> Never</label><br>
+                <label><input type="radio" name="avoid-plastics" value="Never" required> Never</label><br>
                 <label><input type="radio" name="avoid-plastics" value="Rarely"> Rarely</label><br>
                 <label><input type="radio" name="avoid-plastics" value="Sometimes"> Sometimes</label><br>
                 <label><input type="radio" name="avoid-plastics" value="Often"> Often</label><br>
@@ -49,7 +42,7 @@
 
             <div class="question">
                 <p>How often do you choose plant-based meals?</p>
-                <label><input type="radio" name="plant-meals" value="Never"> Never</label><br>
+                <label><input type="radio" name="plant-meals" value="Never" required> Never</label><br>
                 <label><input type="radio" name="plant-meals" value="Rarely"> Rarely</label><br>
                 <label><input type="radio" name="plant-meals" value="Sometimes"> Sometimes</label><br>
                 <label><input type="radio" name="plant-meals" value="Often"> Often</label><br>
@@ -58,25 +51,16 @@
 
             <div class="question">
                 <p>How often do you buy second-hand or thrifted items?</p>
-                <label><input type="radio" name="buy-secondhand" value="Never"> Never</label><br>
+                <label><input type="radio" name="buy-secondhand" value="Never" required> Never</label><br>
                 <label><input type="radio" name="buy-secondhand" value="Rarely"> Rarely</label><br>
                 <label><input type="radio" name="buy-secondhand" value="Sometimes"> Sometimes</label><br>
-                <label><input type="radio" name="buy-second-hand" value="Often"> Often</label><br>
-                <label><input type="radio" name="buy-second-hand" value="Daily"> Daily</label><br>
-            </div>
-
-            <div class="question">
-                <p>How often do you make an intentional effort to avoid buying items you don't need?</p>
-                <label><input type="radio" name="avoid-over-buying" value="Never"> Never</label><br>
-                <label><input type="radio" name="avoid-over-buying" value="Rarely"> Rarely</label><br>
-                <label><input type="radio" name="avoid-over-buying" value="Sometimes"> Sometimes</label><br>
-                <label><input type="radio" name="avoid-over-buying" value="Often"> Often</label><br>
-                <label><input type="radio" name="avoid-over-buying" value="Daily"> Daily</label><br>
+                <label><input type="radio" name="buy-secondhand" value="Often"> Often</label><br>
+                <label><input type="radio" name="buy-secondhand" value="Daily"> Daily</label><br>
             </div>
 
             <div class="question">
                 <p>How often do you take steps to reduce consumption of resources like energy and water? (e.g., turning off lights, taking shorter showers)?</p>
-                <label><input type="radio" name="reduce-resources" value="Never"> Never</label><br>
+                <label><input type="radio" name="reduce-resources" value="Never" required> Never</label><br>
                 <label><input type="radio" name="reduce-resources" value="Rarely"> Rarely</label><br>
                 <label><input type="radio" name="reduce-resources" value="Sometimes"> Sometimes</label><br>
                 <label><input type="radio" name="reduce-resources" value="Often"> Often</label><br>
@@ -85,25 +69,27 @@
 
             <div class="question">
                 <p>How do you usually commute?</p>
-                <label><input type="radio" name="commute-choice" value="Car"> Car</label><br>
+                <label><input type="radio" name="commute-choice" value="Car" required> Car</label><br>
                 <label><input type="radio" name="commute-choice" value="Bike"> Bike</label><br>
                 <label><input type="radio" name="commute-choice" value="Walk"> Walk</label><br>
                 <label><input type="radio" name="commute-choice" value="Public Transport"> Public Transportation</label><br>
                 <label><input type="radio" name="commute-choice" value="Other"> Other</label><br>
-                <label><input type="radio" name="commute-choice" value="I don't commute"> I don't commute</label><br>
+                <label><input type="radio" name="commute-choice" value="None"> I don't commute</label><br>
             </div>    
             
             <div class="question">
                 <p>How much time are you willing to dedicate to sustainability challenges per day?</p>
-                <label><input type="radio" name="time-commitment" value="1-10">Less than 10 minutes</label><br>
+                <label><input type="radio" name="time-commitment" value="1-10"  required>Less than 10 minutes</label><br>
                 <label><input type="radio" name="time-commitment" value="10-20"> 10-20 minutes</label><br>
                 <label><input type="radio" name="time-commitment" value="20-30"> 20-30 minutes</label><br>
                 <label><input type="radio" name="time-commitment" value="30-45"> 30-45 minutes</label><br>
                 <label><input type="radio" name="time-commitment" value="45+"> 45+ minutes</label><br>
             </div>        
             
-            <button type="Submit">Submit</button>
+            <button type="submit" value="Submit">Submit</button>
         </form>
     </div>
+
+    <script src="{{ url_for('static', filename='js/survey.js') }}"></script>
 </body>
 </html>

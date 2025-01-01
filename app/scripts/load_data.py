@@ -3,6 +3,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, classification_report
 from imblearn.over_sampling import SMOTE
+import joblib
 
 
 # Load data
@@ -54,3 +55,6 @@ y_pred = rf_model.predict(x_test_scaled)
 accuracy = accuracy_score(y_test, y_pred)
 print(f"Accuracy: {accuracy:.4f}")
 print("Classification Report:\n", classification_report(y_test, y_pred, zero_division=1))
+
+joblib.dump(rf_model, '../ml_model/recommendation_model.pkl')
+print("Model saved as recommendation_model.pkl")
