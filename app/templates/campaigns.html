@@ -12,7 +12,8 @@
             <div class="campaign-name">{{ recommended_campaign }}</div>
             <div class="icon-container">
                 <img src="{{ campaign_icon }}" alt="Campaign Icon" class="campaign-icon">
-            </div>            <div class="campaign-description">{{ campaign_description }}</div>
+            </div>            
+            <div class="campaign-description">{{ campaign_description }}</div>
             <div class="campaign-length">Length: {{ campaign_length }}</div>
             <a href="{{ url_for('dashboard') }}" class="next-button">Next</a>
         {% else %}

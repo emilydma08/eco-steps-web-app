@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Quicksand:wght@300..700&family=Signika:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Quicksand:wght@300..700&family=Signika:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Quicksand:wght@300..700&family=Signika:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300..700&display=swap');
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.navbar {
+    background-color: #8CC2A5;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+/*.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin: 0 1rem;
+}*/
+
+.dashboard {
+    display: flex;
+    padding: 2rem;
+    margin-top: 5vh;
+    justify-content: flex-start; /* Align left and right sections together */
+    
+}
+
+.left-section {
+    width: 35%;
+    padding: 1rem;
+    background-color: #F7E4D4;
+    border-radius: 5px;
+}
+
+.left-section h2{
+    font-size: 42px;
+}
+
+.left-section p{
+    font-size: 18px;
+}
+
+.campaign-progress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.progress-circle {
+    width: 300px;
+    height: 300px;
+    border: 10px solid lightgray;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+    position: relative; 
+}
+
+.campaign-icon {
+    max-width: 80%; 
+    max-height: 80%; 
+    position: relative;
+}
+
+.progress-circle .progress-text {
+    position: absolute;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* General styles */
+.right-section {
+    padding: 1rem;
+    width: 60%;
+}
+
+.right-section h3{
+    font-size: 36px;
+}
+
+.todays-challenge, .challenge-list {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Challenge card styling */
+.challenge {
+    padding: 0.5rem;
+    margin-bottom: 1.5rem;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.challenge p {
+    margin: 0;
+    padding: 0;
+}
+
+.select-challenge {
+    background-color: #8CC2A5;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    flex-shrink: 0;
+    font-size: 14px;
+}
+
+.challenge-content{
+    display: flex;
+    flex-direction: column;
+}
+
+.challenge-name {
+    font-weight: bold; /* Make the name stand out */
+    margin: 0; /* Remove default margin */
+}
+
+.challenge-description {
+    color: #666; /* Optional: Use a muted color for description */
+    margin: 5px 0 0 0; /* Add some spacing */
+}
+.select-challenge:hover {
+    background-color: #8CC2A5;
+}
+
+#todays-challenge-container p {
+    font-style: italic;
+    color: gray;
+}
+
+#todays-challenge-container .challenge .challenge-name,
+#todays-challenge-container .challenge .challenge-description {
+    font-style: normal;
+    color: black;
+}
+
+.challenge.fade-in {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.challenge.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none; /* Optional: Prevent interactions during fade-out */
+}

@@ -16,7 +16,7 @@ campaign_logic = {
     'Litter Cleanup Challenge': lambda row: row['time-commitment'] in ['20-30', '30-45', '45+'] and row['lifestyle-rating'] > 2,
     'Plant-Based Eating': lambda row: row['plant-meals'] != 'Never' and row['time-commitment'] not in ['1-10'] and row['lifestyle-rating'] > 3,
     'Water-Saver': lambda row: row['reduce-resources'] != 'Never' and row['time-commitment'] in ['10-20', '20-30', '30-45'],
-    'Green Transportation': lambda row: row['commute-choice'] not in ['Walk', 'Bike'] and row['lifestyle-rating'] > 2,
+    'Green Transportation': lambda row: row['commute-choice'] not in ['Walk', 'Bike', 'None'] and row['lifestyle-rating'] > 2,
     'Sustainable Shopping Sprint': lambda row: row['buy-secondhand'] != 'Never' and row['avoid-plastics'] != 'Never' and row['time-commitment'] not in ['1-10', '10-20'],
 }
 

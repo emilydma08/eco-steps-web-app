@@ -3,9 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>EcoSteps Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
 </head>
 <body>
-    
+    <nav class="navbar">
+    </nav>
+    <div class="dashboard">
+        <div class="left-section">
+            <div class="campaign-progress">
+                <div class="progress-circle">
+                    <img src="{{ campaign_icon }}" alt="Campaign Icon" class="campaign-icon">
+                    <span class="progress-text">Day X</span>
+                </div>
+            </div>
+            <h2 id="campaign-name">{{ recommended_campaign }}</h2>
+            <p id="campaign-description">{{ campaign_description }}</p>
+        </div>
+        <div class="right-section">
+            <div class="todays-challenge">
+                <h3>Today's Challenge</h3>
+                <div id="todays-challenge-container">
+                    <p>No challenge selected</p>
+                </div>
+            </div>
+            <div class="challenge-list">
+                <h3>All Challenges</h3>
+                <div id="all-challenges">
+                    {% for challenge in campaign_challenges %}
+                        <div class="challenge">
+                            <button class="select-challenge">Select</button>
+                            <div class="challenge-content">
+                                <p class="challenge-name">{{ challenge.name }}</p>
+                                <p class="challenge-description">{{ challenge.description }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>                   
+        </div>        
+    </div>
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
 </body>
 </html>

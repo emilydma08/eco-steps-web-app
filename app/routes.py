@@ -70,7 +70,19 @@ def select_campaign():
 # Dashboard route
 @app.route('/dashboard')
 def dashboard():
-    return render_template('dashboard.html')
+    recommended_campaign = int(session.get('recommended_campaign', None))+1
+    campaign_name = campaigns[recommended_campaign]['name']
+    campaign_icon = campaigns[recommended_campaign]['icon']
+    campaign_description = campaigns[recommended_campaign]['description']
+    campaign_length = campaigns[recommended_campaign]['length']
+    campaign_challenges = campaigns[recommended_campaign]['challenges']
+    print(len(campaign_challenges))  
+    return render_template('dashboard.html',
+        recommended_campaign=campaign_name, 
+        campaign_icon=campaign_icon,
+        campaign_description=campaign_description,
+        campaign_length=campaign_length,
+        campaign_challenges=campaign_challenges)
 
 # Progress route
 @app.route('/progress')
