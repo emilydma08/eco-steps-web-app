@@ -1,5 +1,5 @@
 campaigns = {
-    1: {
+    0: {
         'name': 'Waste-Free Week',
         'icon': '/static/icons/waste_free_week.png',
         'description': (
@@ -19,7 +19,7 @@ campaigns = {
             {'name': 'Conduct a waste audit in your home', 'description': 'Identify where you generate the most waste.'}
         ]
     },
-    2: {
+    1: {
         'name': 'Energy-Saver',
         'icon': '/static/icons/energy_saver.png',
         'description': (
@@ -38,7 +38,7 @@ campaigns = {
             {'name': 'Set your computer to power-saving mode', 'description': 'Adjust your settings to reduce energy use.'}
         ]
     },
-    3: {
+    2: {
         'name': 'Plastic Free',
         'icon': '/static/icons/plastic_free.png',
         'description': (
@@ -57,7 +57,7 @@ campaigns = {
             {'name': 'Avoid disposable utensils for the day', 'description': 'Carry your own reusable cutlery.'}
         ]
     },
-    4: {
+    3: {
         'name': 'Fast Fashion Detox',
         'icon': '/static/icons/fast_fashion_detox.png',
         'description': (
@@ -76,7 +76,7 @@ campaigns = {
             {'name': 'Choose natural fabrics over synthetic ones', 'description': 'Opt for cotton, wool, or linen instead of polyester.'}
         ]
     },
-    5: {
+    4: {
         'name': 'Litter Cleanup Challenge',
         'icon': '/static/icons/litter_cleanup.png',
         'description': (
@@ -95,7 +95,7 @@ campaigns = {
             {'name': 'Spend 15 minutes cleaning up litter near a water source', 'description': 'Protect aquatic ecosystems by removing trash.'}
         ]
     },
-    6: {
+    5: {
         'name': 'Plant-Based Eating',
         'icon': '/static/icons/plant_based_eating.png',
         'description': (
@@ -114,7 +114,7 @@ campaigns = {
             {'name': 'Challenge a friend to a plant-based meal cook-off', 'description': 'Share plant-based recipes and compete for fun.'}
         ]
     },
-    7: {
+    6: {
         'name': 'Water-Saver',
         'icon': '/static/icons/water_saver.png',
         'description': (
@@ -132,7 +132,7 @@ campaigns = {
             {'name': 'Use leftover cooking water to water plants', 'description': 'Recycle water used for boiling vegetables or pasta.'}
         ]
     },
-    8: {
+    7: {
         'name': 'Green Transportation',
         'icon': '/static/icons/green_transportation.png',
         'description': (
@@ -147,7 +147,7 @@ campaigns = {
             {'name': 'Plan your errands out to avoid unnecessary trips', 'description': 'Combine tasks to reduce driving.'}
         ]
     },
-    9: {
+    8: {
         'name': 'Sustainable Shopping Sprint',
         'icon': '/static/icons/sustainable_shopping.png',
         'description': (

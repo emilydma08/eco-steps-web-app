@@ -4,21 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoSteps Dashboard</title>
+    <script>
+        function showPopup(message, redirectUrl) {
+            alert(message);
+            if (redirectUrl) {
+                window.location.href = redirectUrl;
+            }
+        }
+    </script>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animations.css') }}">
+
 </head>
 <body>
     <nav class="navbar">
+        <ul>
+            <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+            <li><a href="{{ url_for('reflection') }}">Reflection</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+        </ul>
     </nav>
+
+    {% if popup_message %}
+    <script>
+        showPopup("{{ popup_message }}", "{{ redirect_url }}");
+    </script>
+    {% endif %}
+
     <div class="dashboard">
         <div class="left-section">
-            <div class="campaign-progress">
-                <div class="progress-circle">
-                    <img src="{{ campaign_icon }}" alt="Campaign Icon" class="campaign-icon">
-                    <span class="progress-text">Day X</span>
+            <div class="campaign-progress-div">
+                <div class="campaign-progress">
+                    <div class="progress-circle">
+                        <img src="{{ campaign_icon }}" alt="Campaign Icon" class="campaign-icon">
+                        <span class="progress-text">Day X</span>
+                    </div>
+                </div>
+                <h2 id="campaign-name">{{ recommended_campaign }}</h2>
+                <p id="campaign-description">{{ campaign_description }}</p>
+            </div>
+
+            <!-- Progress Statistics Section -->
+            <div class="progress-stats">
+                <div class="progress-stat">
+                    <h1 id="total-campaigns-completed">0</h1>
+                    <p>Lifetime Campaigns Completed</p>
+                </div>
+                <div class="progress-stat">
+                    <h1 id="total-challenges-completed">0</h1>
+                    <p>Lifetime Challenges Completed</p>
                 </div>
             </div>
-            <h2 id="campaign-name">{{ recommended_campaign }}</h2>
-            <p id="campaign-description">{{ campaign_description }}</p>
         </div>
         <div class="right-section">
             <div class="todays-challenge">
@@ -43,6 +79,19 @@
             </div>                   
         </div>        
     </div>
+
+    <div id="celebration-popup" class="popup hidden">
+        <div class="popup-content">
+          <h2>Congratulations!</h2>
+          <p>You’ve completed this campaign! Great job on taking sustainable steps!</p>
+          <button id="close-popup">Start a New Campaign</button>
+        </div>
+      </div>
+
     <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+    <script>
+        const totalCampaignsCompleted = {{ total_campaigns_completed }};
+        const totalChallengesCompleted = {{ total_challenges_completed }};
+    </script>
 </body>
 </html>

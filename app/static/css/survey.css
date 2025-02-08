@@ -6,16 +6,20 @@
 /* General Styles */
 body {
     font-family: 'Quicksand', sans-serif;
-    background-color: #F7E4D4;
     margin: 0;
     padding: 0;
+    background-image: url('../images/surveybg3.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .survey-container {
     max-width: 800px;
+    border: rgb(0,0,0,0.5) 2px solid;
+    padding: 30px 40px;
+    animation: slideInDown 1s 1s forwards;
     margin: 30px auto;
-    background-color: white;
-    padding: 20px;
+    background-color: rgb(244, 234, 217, 0.98);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
@@ -25,6 +29,7 @@ h1 {
     font-size: 24px;
     margin-bottom: 30px;
     color: #333;
+    animation: slideInDown 1s 1s forwards;
 }
 
 /* Styling the Form */
@@ -88,20 +93,25 @@ input[type="radio"] {
 
 /* Styling the Button */
 button {
-    background-color: #8CC2A5;
-    color: white;
     padding: 15px 20px;
-    border: none;
-    border-radius: 5px;
+    margin: 10px auto;
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s ease;
     font-family: 'Nunito';
     font-weight: 600px;
+    background-color: rgba(124,144,119);
+    color: rgba(216, 216, 216, 0.9); /* Off-white with opacity */
+    text-decoration: none;
+    border-radius: 5px;
+    border: 0px solid rgb(49, 56, 48);  /* Slightly darker border to define the buttons */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);  /* Soft shadow */
+    display: block;
+    width: 100%;
 }
 
 button:hover {
-    background-color: #a6d4bb;
+    transform: scale(1.05);
 }
 
 /* Responsive Design */

@@ -31,7 +31,47 @@ function selectChallenge(event) {
     completeCheckbox.addEventListener('change', completeChallenge);
 
     challengeDiv.querySelector('.select-challenge').replaceWith(completeCheckbox);
+
+    const deselectButton = document.createElement('button');
+    deselectButton.textContent = 'Deselect';
+    deselectButton.className = 'deselect-challenge';
+    deselectButton.addEventListener('click', deselectChallenge);
+
+    // Append the Deselect button to the challenge
+    challengeDiv.appendChild(deselectButton);
 }
+
+// Function to deselect a challenge
+function deselectChallenge(event) {
+    // Find the challenge div
+    const challengeDiv = event.target.closest('.challenge');
+
+    // Remove the "Deselect" button
+    const deselectButton = challengeDiv.querySelector('.deselect-challenge');
+    if (deselectButton) {
+        deselectButton.remove();
+    }
+
+    // Replace the "Complete" checkbox with the "Select" button
+    const completeCheckbox = challengeDiv.querySelector('.complete-challenge');
+    if (completeCheckbox) {
+        const selectButton = document.createElement('button');
+        selectButton.textContent = 'Select'; // Set button text
+        selectButton.className = 'select-challenge'; // Add class for styling
+        selectButton.addEventListener('click', selectChallenge); // Reattach event listener
+        completeCheckbox.replaceWith(selectButton); // Replace the checkbox
+    }
+
+    // Move the challenge back to "All Challenges"
+    allChallengesContainer.appendChild(challengeDiv);
+
+    // Reset the "Today's Challenge" section
+    todaysChallengeContainer.innerHTML = '<p>No challenge selected</p>';
+
+    // Remove any animation classes
+    challengeDiv.classList.remove('fade-in');
+}
+
 
 // Function to complete a challenge
 function completeChallenge(event) {
@@ -49,6 +89,7 @@ function completeChallenge(event) {
 
             // Increment the completed challenge counter
             completedChallenges++;
+            checkCampaignCompletion();
 
             // Reset the "Today's Challenge" section
             todaysChallengeContainer.innerHTML = '<p>No challenge selected</p>';
@@ -60,6 +101,49 @@ function completeChallenge(event) {
     );
 }
 
+function showCelebrationPopup(){
+    const popup = document.getElementById('celebration-popup');
+    popup.classList.remove('hidden'); // Show the popup
+}
+
+// Attach an event listener to close the popup
+document.getElementById('close-popup').addEventListener('click', () => {
+    const popup = document.getElementById('celebration-popup');
+    popup.classList.add('hidden'); // Hide the popup 
+
+    // Reload the page to load the next campaign
+    location.reload();
+});
+
+function checkCampaignCompletion(){
+    const remainingChallenges = allChallengesContainer.querySelectorAll('.challenge').length;
+    const activeChallenge = todaysChallengeContainer.querySelector('.challenge');
+
+    if (remainingChallenges === 0 && !activeChallenge) {
+        // Notify the server that the campaign is complete
+        completeCampaign();
+    }
+}
+
+function completeCampaign(){
+    fetch('/complete_campaign', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ completed: true }),
+    })
+        .then(response => {
+            if (response.ok) {
+                // Reload the dashboard to load the next campaign
+                showCelebrationPopup();
+            } else {
+                console.error('Error completing campaign');
+            }
+        })
+        .catch(error => console.error('Error:', error));
+}
+
 // Function to update progress
 function updateProgress() {
     // Calculate progress as a percentage
@@ -68,8 +152,8 @@ function updateProgress() {
     // Update the progress circle
     progressCircle.style.background = `
         conic-gradient(
-            #8CC2A5 ${progress}%, 
-            lightgray ${progress}%
+            rgba(124, 144, 119) ${progress}%, 
+            rgb(252, 248, 241) ${progress}%
         )
     `;
 
@@ -92,3 +176,14 @@ progressText.textContent = `0/${totalChallenges} days`;
 document.querySelectorAll('.select-challenge').forEach(button => {
     button.addEventListener('click', selectChallenge);
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Get references to the elements
+    const totalCampaignsCompletedElement = document.getElementById("total-campaigns-completed");
+    const totalChallengesCompletedElement = document.getElementById("total-challenges-completed");
+
+    // Populate the elements with the data passed from Flask
+    totalCampaignsCompletedElement.textContent = totalCampaignsCompleted;
+    totalChallengesCompletedElement.textContent = totalChallengesCompleted;
+});
+

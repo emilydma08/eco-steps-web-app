@@ -2,21 +2,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Quicksand:wght@300..700&family=Signika:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Quicksand:wght@300..700&family=Signika:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Raleway:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;600&family=Work+Sans:wght@200;300;400;600&display=swap');
+
 
 /*General Styling*/
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #F7E4D4;
     overflow: hidden;
+    background-image: url('../images/eleafbg.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
-
-/*Homepage Styling*/
+/*Homepage Styling
 .corner {
     position: absolute;
     width: 12vw;
@@ -31,7 +37,7 @@ body, html {
     object-fit: contain;
 }
 
-/* Specific Corner Positions with Animations */
+Specific Corner Positions with Animations
 .corner-top-left {
     top: 0px;
     left: 0px;
@@ -54,27 +60,36 @@ body, html {
     bottom: 0px;
     right: 0px;
     animation: animateIn 1s 0.5s forwards;
-}
+}*/
 
 /* Center Content */
 .center-content {
     text-align: center;
     z-index: 10;
+    border: black 2px solid;
+    background-color: rgb(244, 234, 217);
+    border-radius: 10px;
+    padding: 50px 80px;
+    width: fit-content;
+    word-wrap: break-word;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .title {
-    font-size: 8rem;
+    font-size: 9rem;
     color: #2D2D2A;
     margin: 10px 0;
-    font-family: 'Comfortaa';
-    font-weight: 700px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300px;
     animation: slideInDown 1s 1s forwards;
     opacity: 0;
     letter-spacing: 0.08em;
+    word-break: break-word;
 }
 
 .subtitle {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #a1a199;
     margin: 15px 0;
     font-family: 'Quicksand';
@@ -84,20 +99,34 @@ body, html {
     letter-spacing: 0.05em;
 }
 
-.start-button {
+/* Button Group */
+.button-group {
+    display: inline-flex;
+    gap: 4vw; /* Space between the buttons */
+    margin-top: 20px;
+}
+
+.start-button, .about-button {
     display: inline-block;
     padding: 10px 20px;
-    margin-top: 20px;
-    background-color: #8CC2A5;
-    color: #2D2D2A;
-    font-family: 'Nunito';
-    font-weight: 600px;
+    margin-top: 15px;
+    background-color: rgba(124,144,119);
+    color: rgba(216, 216, 216, 0.9); /* Off-white with opacity */
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300px;
     text-decoration: none;
     border-radius: 5px;
-    font-size: 2.5rem;
+    font-size: 1.9rem;
     animation: fadeIn 1s 1.75s forwards;
     opacity: 0;
     letter-spacing: 0.1em;
+    border: 0px solid rgb(49, 56, 48);  /* Slightly darker border to define the buttons */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);  /* Soft shadow */
+
+}
+
+.start-button:hover, .about-button:hover{
+    transform: scale(1.05);
 }
 
 /* Animations */
