@@ -1,15 +1,15 @@
 from app import app
 from flask import session, render_template, request, jsonify, redirect, url_for
-import joblib
-import pandas as pd
-import numpy as np
-from app.preprocessing import preprocess_data
+#import joblib
+#import pandas as pd
+#import numpy as np
+#from app.preprocessing import preprocess_data
 from app.campaigns import campaigns
 import random
 
 app.secret_key='secretkey'
 
-model = joblib.load('app/ml_model/recommendation_model.pkl')
+#model = joblib.load('app/ml_model/recommendation_model.pkl')
 
 # Home route
 @app.route('/')
@@ -33,21 +33,23 @@ def survey():
                 form_data['waste-sorting'] = 'default_value'  # Set an appropriate default or handle as needed
 
             # Process the data (as per your existing logic)
-            processed_data = preprocess_data(form_data)
-            processed_data = np.array(processed_data, dtype=float)
+            #processed_data = preprocess_data(form_data)
+            #processed_data = np.array(processed_data, dtype=float)
 
-            if np.any(np.isnan(processed_data)) or np.any(np.isinf(processed_data)):
-                print("Data contains NaN or infinity values!")
+            #if np.any(np.isnan(processed_data)) or np.any(np.isinf(processed_data)):
+             #   print("Data contains NaN or infinity values!")
 
             # Make predictions with the model
-            predicted_campaign = model.predict(processed_data)
-            predicted_campaign_value = int(predicted_campaign[0])
+            #predicted_campaign = model.predict(processed_data)
+            #predicted_campaign_value = int(predicted_campaign[0])
 
+            remaining_campaigns = [i for i in range(len(campaigns))]
+            predicted_campaign = random.choice(remaining_campaigns)
+            session['recommended_campaign'] = predicted_campaign
+            session.modified = True
+            print(f"Campaign being chosen: {predicted_campaign}")
 
-             # Store the predicted value in session
-            session['recommended_campaign'] = predicted_campaign_value
             session['survey_completed'] = True
-            print(predicted_campaign_value)
 
             # Redirect to the /campaigns route
             return redirect(url_for('select_campaign'))
