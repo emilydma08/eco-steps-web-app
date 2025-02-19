@@ -11,13 +11,55 @@
 <body>
     <nav class="navbar">
         <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
             <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
-            <li><a href="{{ url_for('reflection') }}">Reflection</a></li>
             <li><a href="{{ url_for('about') }}">About</a></li>
         </ul>
     </nav>
 
-    <h1>About Us</h1>
-    <p>This is the about page.</p>
+    <section class="content-section pitch">
+        <div class="text">
+            <h2>Why EcoSteps?</h2>
+            <p>Many people want to live a sustainable, but most don't know where to start. The journey can often feel overwhelming, confusing, or too difficult, and one-size-fits-all solutions don't always work.
+                That's where EcoSteps comes in. This app uses AI to break sustainability into small, personalized actions that fit each user’s lifestyle, habits, and resources.
+                Not everyone has the same access to eco-friendly choices, but with AI-driven recommendations, EcoSteps makes sustainable living achievable for everyone—regardless of their circumstances. Sustainability shouldn’t be complicated or out of reach. With EcoSteps, small, meaningful actions can add up to real change—one step at a time.
+            </p>
+        </div>
+        <div class="image">
+            <img src="{{ url_for('static', filename='images/about1.jpg') }}" alt="Description of Image">
+        </div>
+    </section>
+
+    <section class="content-section process">
+        <div class="image">
+            <img src="{{ url_for('static', filename='images/about2.jpg') }}" alt="Description of Image">
+        </div>
+        <div class="text">
+            <h2>How It Works</h2>
+            <p>I began by designing an initial survey to gather information about users' habits, preferences, and goals. To personalize the aop, I created a machine learning model that was trained on generated data to recommend campaigns based on the user's responses.
+                This model analyzes survey inputs and matches users with the most relevant sustainability challenges, making the user's journey more meaningful and achievable.
+                A significant part of my time was dedicated to developing the UI. I focused on creating a clean and appealing design that was also easy for users to navigate the app, complete challenges, and track their progress.
+                Throughout the process, I aimed to balance technical features with user-centered design, ensuring that the app was both intelligent and enaging to use.
+            </p>
+        </div>
+    </section>
+
+    <section class="content-section future">
+        <div class="text">
+            <h2>Future Vision</h2>
+            <p>After the Girls Who Code Challenge, I plan to expand EcoSteps with new features to improve the personalization, engagement, and accessibility/
+                One such feature will be advanced AI personalization, so as the user completes challenges the AI will dynamically adjust recommendations and create personalized challenges and campaigns based on their progress.
+                Another feature would be the inclusion of a chatbot to provide detailed explanations of how each challenge benefits the environment, helping users understand how their actions have real-world impact.
+                I also want EcoSteps to be a mobile app in order for easy access, and introduce a notification system to remind users to complete their daily or weekly challenges.
+                These features will make EcoSteps more personalized, educational, and engaging, empowering users to make a meaningful difference—one step at a time.</p>
+        </div>
+        <div class="image">
+            <img src="{{ url_for('static', filename='images/about3.jpg') }}" alt="Description of Image">
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 EcoSteps. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>

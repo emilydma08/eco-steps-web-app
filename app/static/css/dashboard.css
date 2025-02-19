@@ -79,7 +79,7 @@ nav ul li a:hover {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   border: rgb(0, 0, 0, 0.5) 2px solid;
-  animation: slideInDown 1s 1s forwards;
+  animation: slideInDown 0.5s forwards;
   background-color: rgb(244, 234, 217, 0.98);
 }
 
@@ -144,7 +144,7 @@ nav ul li a:hover {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   border: rgb(0, 0, 0, 0.5) 2px solid;
-  animation: slideInDown 1s 1s forwards;
+  animation: slideInDown 0.5s forwards;
   background-color: rgb(244, 234, 217, 0.98);
 }
 
@@ -160,7 +160,7 @@ nav ul li a:hover {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   border: rgb(0, 0, 0, 0.5) 2px solid;
-  animation: slideInDown 1s 1s forwards;
+  animation: slideInDown 0.5s forwards;
   background-color: rgb(244, 234, 217, 0.98);
 }
 
@@ -203,7 +203,6 @@ nav ul li a:hover {
   background-color: rgba(124, 144, 119);
   color: rgba(216, 216, 216, 0.9); /* Off-white with opacity */
   text-decoration: none;
-  animation: fadeIn 1s 1.75s forwards;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* Soft shadow */
 }
 
@@ -217,7 +216,6 @@ nav ul li a:hover {
   transition: background-color 0.3s ease;
   margin-left: auto;
   color: rgba(216, 216, 216, 0.9); /* Off-white with opacity */
-  animation: fadeIn 1s 1.75s forwards;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* Soft shadow */
 }
 
@@ -311,7 +309,7 @@ nav ul li a:hover {
   background-color: rgba(124, 144, 119);
   color: rgba(216, 216, 216, 0.9); /* Off-white with opacity */
   text-decoration: none;
-  animation: fadeIn 1s 1.75s forwards;
+  animation: fadeIn 1s forwards;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* Soft shadow */
 }
 
@@ -330,7 +328,7 @@ nav ul li a:hover {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   border: rgb(0, 0, 0, 0.5) 2px solid;
-  animation: slideInDown 1s 1s forwards;
+  animation: slideInDown 0.5s forwards;
   background-color: rgb(244, 234, 217, 0.98);
 }
 

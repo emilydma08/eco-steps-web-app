@@ -201,19 +201,10 @@ def complete_campaign():
     return jsonify({'message': 'Campaign completed'}), 200
 
 
-# Progress route
-@app.route('/progress')
-def progress():
-    return render_template('progress.html')
-
 # About route
 @app.route('/about')
 def about():
     return render_template('about.html')
-
-@app.route('/reflection')
-def reflection():
-    return render_template('reflection.html')
 
 @app.route('/reset_session')
 def reset_session():

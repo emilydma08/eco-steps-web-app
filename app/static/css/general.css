@@ -3,25 +3,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Quicksand:wght@300..700&family=Signika:wght@300..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300..700&display=swap");
 
-/* Reset some basic styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-    font-family: "Quicksand", sans-serif;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    background-color: #f7e4d4;
-
-}
-
 nav {
   background-color: #363434;
   padding: 0.75rem 1rem;
@@ -54,4 +35,101 @@ nav ul li a {
 
 nav ul li a:hover {
   background-color: #555;
+}
+
+/* General styles */
+body {
+  font-family: "Quicksand", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: #F7E4D4;
+  box-sizing: border-box; /* Include padding and borders in width calculations */
+  padding-top: 80px;
+}
+
+/* Header */
+.about-header {
+  background-color: #99a89a;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  width: 100%;
+  margin: 0;
+}
+
+/* Content sections */
+.content-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Align text and image to the top */
+  height: 50vh; /* Consistent row height */
+  width: 100%;
+}
+
+/* Text and Image Layout */
+.content-section .text,
+.content-section .image {
+  height: 100%;
+}
+
+.content-section .text {
+  padding: 50px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column; /* Stack h2 and p vertically */
+  justify-content: flex-start; /* Align text to the top */
+}
+
+.content-section .text h2 {
+  margin-bottom: 20px; /* Space between h2 and paragraph */
+  font-size: 30px;
+}
+
+.content-section .text p {
+  margin: 0; /* Remove any default margins */
+}
+
+/* Pitch section - 40% text, 60% image */
+.pitch .text {
+  flex: 0 0 40%; /* 40% width for text */
+}
+
+.pitch .image {
+  flex: 0 0 60%; /* 60% width for image */
+}
+
+/* Process section - 60% text, 40% image */
+.process .text {
+  flex: 0 0 60%; /* 60% width for text */
+}
+
+.process .image {
+  flex: 0 0 40%; /* 40% width for image */
+}
+
+/* Future Vision section - 40% text, 60% image */
+.future .text {
+  flex: 0 0 40%; /* 40% width for text */
+}
+
+.future .image {
+  flex: 0 0 60%; /* 60% width for image */
+}
+
+/* Ensure images cover the container */
+.content-section .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  width: 100%;
 }

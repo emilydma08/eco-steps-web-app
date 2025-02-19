@@ -17,7 +17,7 @@ body {
     max-width: 800px;
     border: rgb(0,0,0,0.5) 2px solid;
     padding: 30px 40px;
-    animation: slideInDown 1s 1s forwards;
+    animation: fadeIn 0.75s ease-out forwards;
     margin: 30px auto;
     background-color: rgb(244, 234, 217, 0.98);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -29,7 +29,7 @@ h1 {
     font-size: 24px;
     margin-bottom: 30px;
     color: #333;
-    animation: slideInDown 1s 1s forwards;
+    animation: slideInDown 0.75s forwards;
 }
 
 /* Styling the Form */

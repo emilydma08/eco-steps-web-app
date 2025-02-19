@@ -28,8 +28,10 @@ body {
     align-items: center; /* Centers content horizontally */
     border: rgb(0,0,0,0.5) 2px solid;
     padding: 30px 60px;
-    animation: slideInDown 1s 1s forwards;
+    animation: slideInUp 0.5s ease-out forwards;
     background-color: rgb(244, 234, 217, 0.98);
+    box-sizing: border-box;  /* Ensures padding doesn't cause overflow */
+    overflow: hidden;
 }
 
 
@@ -89,11 +91,69 @@ body {
     font-weight: 300px;
     text-decoration: none;
     border-radius: 5px;
-    animation: fadeIn 1s 1.75s forwards;
     letter-spacing: 0.1em;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);  /* Soft shadow */
 }
 
 .next-button:hover {
     transform: scale(1.1);
+}
+
+/* Media Queries for mobile responsiveness */
+@media (max-width: 768px) {
+    .campaign-container {
+        width: 95%;
+        padding: 20px 40px;
+    }
+
+    .campaign-name {
+        font-size: 30px;
+    }
+
+    .campaign-description {
+        font-size: 16px;
+    }
+
+    .campaign-length {
+        font-size: 20px;
+    }
+
+    .next-button {
+        width: 60%;
+        font-size: 1.1rem;
+    }
+
+    .icon-container {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .campaign-container {
+        width: 90%;
+        padding: 15px 30px;
+    }
+
+    .campaign-name {
+        font-size: 24px;
+    }
+
+    .campaign-description {
+        font-size: 14px;
+    }
+
+    .campaign-length {
+        font-size: 18px;
+    }
+
+    .next-button {
+        width: 80%;
+        font-size: 1rem;
+    }
+
+    .icon-container {
+        width: 120px;
+        height: 120px;
+    }
 }
